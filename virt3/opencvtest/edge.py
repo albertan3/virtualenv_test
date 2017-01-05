@@ -7,9 +7,10 @@ import cv2
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 #https://github.com/Itseez/opencv/blob/master/data/haarcascades/haarcascade_eye.xml
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
+cv2.namedWindow("img", cv2.WND_PROP_FULLSCREEN)
+cv2.setWindowProperty("img", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
 
 cap = cv2.VideoCapture(0)
-
 while 1:
     ret, img = cap.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
