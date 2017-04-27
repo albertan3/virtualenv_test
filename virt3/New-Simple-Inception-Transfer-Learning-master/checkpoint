@@ -1,0 +1,2 @@
+model_checkpoint_path: "savedgraph"
+all_model_checkpoint_paths: "savedgraph"
