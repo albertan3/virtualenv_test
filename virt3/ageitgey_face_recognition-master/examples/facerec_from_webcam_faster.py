@@ -19,6 +19,13 @@ obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 albert_image = face_recognition.load_image_file("albert.jpg")
 albert_face_encoding = face_recognition.face_encodings(albert_image)[0]
 
+reuben_image = face_recognition.load_image_file("reuben.jpg")
+reuben_face_encoding = face_recognition.face_encodings(reuben_image)[0]
+
+john_image = face_recognition.load_image_file("john.jpg")
+john_face_encoding = face_recognition.face_encodings(john_image)[0]
+
+
 # Initialize some variables
 face_locations = []
 face_encodings = []
@@ -44,13 +51,19 @@ while True:
             match = face_recognition.compare_faces([obama_face_encoding], face_encoding)
 
             al_match = face_recognition.compare_faces([albert_face_encoding], face_encoding)
+            re_match = face_recognition.compare_faces([reuben_face_encoding], face_encoding)
+            john_match = face_recognition.compare_faces([john_face_encoding], face_encoding)
             
             name = "Unknown"
 
             if match[0]:
                 name = "Obama"
             elif al_match[0]:
-                name = "Albert"   
+                name = "Albert"  
+            elif re_match[0]:
+                name = "Reuben"
+            elif john_match[0]:
+                name = "John"         
 
             face_names.append(name)
 
